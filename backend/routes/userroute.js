@@ -4,6 +4,7 @@ const userrouter=express.Router();
 const bcrypt=require("bcrypt")
 const jwt=require("jsonwebtoken")
 require("dotenv").config()
+const  passport  = require("../connection/google.Oauth");
 
 userrouter.post("/register",async(req,res)=>{
     const {name,email,password}=req.body;
@@ -55,6 +56,123 @@ userrouter.get("/",async(req,res)=>{
     const user =await userModel.find()
     res.status(200).send(user);
 })
+
+
+// userrouter.get(
+//     "/auth/google",
+//     passport.authenticate("google", { scope: ["profile", "email"] })
+// );
+
+// userrouter.get(
+//     "/auth/google/callback",
+//     passport.authenticate("google", {
+//         failureRedirect: "/login",
+//         session: false,
+//     }),
+//     async function (req, res) {
+//         try {
+//             const fetch_user = await userModel.findOne({ email: req.user.email });
+          
+          
+//             if (fetch_user) {
+//                 token_Generator(res, fetch_user.name, fetch_user._id , fetch_user.image);
+//             } else {
+//                 bcrypt.hash("password", 2, async (err, hash) => {
+//                     const newUser = new userModel({
+//                         name: req.user.name,
+//                         email: req.user.email,
+//                         password: hash,
+//                         image : req.user.avtar
+//                     });
+//                     await newUser.save();
+                   
+//                     token_Generator(res, req.user.name, "login with google",req.user.avtar);
+//                 });
+//             }
+//         } catch (error) {
+//             res.status(500).send({ msg: "An error occurred while authenticating with Google" });
+//         }
+//     }
+// );
+
+// //---------------- Functions Here -----------------------------------
+
+// function token_Generator(res, name, id,image) {
+//     let token = jwt.sign(
+//         { user: name, userID: id ,role : "User" },
+//         process.env.tokenpass,
+//         { expiresIn: "7d" }
+//     );
+//     let refreshToken = jwt.sign(
+//         { user: name, id: id },
+//         process.env.tokenpass,
+//         { expiresIn: "12d" }
+//     );
+    
+//     const redirectUrl = `http://127.0.0.1:5500/frontend/index2.html?token=${token}&username=${name}&image=${image}`;
+
+//     res.redirect(redirectUrl);
+// }
+
+
+   //------------------- Google Auth Here -----------------------------------------
+   userrouter.get(
+    "/auth/google",
+    passport.authenticate("google", { scope: ['profile', 'email'] })
+  );
+  
+  userrouter.get(
+    "/auth/google/callback",
+    passport.authenticate("google", {
+      failureRedirect: "/login",
+      session: false,
+    }),
+  
+  
+    async function (req, res) {
+        try {
+            const fetch_user = await userModel.findOne({ email: req.user.email });
+            console.log(fetch_user)
+          
+          
+            if (fetch_user) {
+                token_Generator(res, fetch_user.name, fetch_user._id, fetch_user.image);
+            } else {
+                bcrypt.hash("password", 2, async (err, hash) => {
+                    const newUser = new userModel({
+                        name: req.user.name,
+                        email: req.user.email,
+                        password: hash,
+                        image : req.user.avatar
+                    });
+                    await newUser.save();
+                    console.log(newUser);
+                   
+                    token_Generator(res, req.user.name, "login with google",req.user.avatar);
+                });
+            }
+        } catch (error) {
+            res.status(500).send({ msg: "An error occurred while authenticating with Google" });
+        }
+    }
+);
+
+
+
+function token_Generator(res, name, id,image) {
+    let token = jwt.sign(
+        { user: name, userID:id},
+        process.env.tokenpass,
+        { expiresIn: "6d" }
+    );
+    
+    const redirectUrl = `http://127.0.0.1:5500/frontend/index2.html?token=${token}&username=${name}&image=${image}`;
+
+    res.redirect(redirectUrl);
+}
+
+
+
 
 
 module.exports=userrouter;
