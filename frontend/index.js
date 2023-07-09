@@ -61,7 +61,7 @@ var texts = [
   
   setInterval(showText, 2500); // Change text every 3 seconds
   
-  const BaseServerUrl = `https://crazy-eel-top-hat.cyclic.app`
+  const BaseServerUrl = `https://larange-backend.onrender.com`
   //////regbtn/////
   
   let regbtn = document.getElementById("Regbtn")

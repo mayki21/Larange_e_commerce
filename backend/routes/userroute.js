@@ -58,61 +58,6 @@ userrouter.get("/",async(req,res)=>{
 })
 
 
-// userrouter.get(
-//     "/auth/google",
-//     passport.authenticate("google", { scope: ["profile", "email"] })
-// );
-
-// userrouter.get(
-//     "/auth/google/callback",
-//     passport.authenticate("google", {
-//         failureRedirect: "/login",
-//         session: false,
-//     }),
-//     async function (req, res) {
-//         try {
-//             const fetch_user = await userModel.findOne({ email: req.user.email });
-          
-          
-//             if (fetch_user) {
-//                 token_Generator(res, fetch_user.name, fetch_user._id , fetch_user.image);
-//             } else {
-//                 bcrypt.hash("password", 2, async (err, hash) => {
-//                     const newUser = new userModel({
-//                         name: req.user.name,
-//                         email: req.user.email,
-//                         password: hash,
-//                         image : req.user.avtar
-//                     });
-//                     await newUser.save();
-                   
-//                     token_Generator(res, req.user.name, "login with google",req.user.avtar);
-//                 });
-//             }
-//         } catch (error) {
-//             res.status(500).send({ msg: "An error occurred while authenticating with Google" });
-//         }
-//     }
-// );
-
-// //---------------- Functions Here -----------------------------------
-
-// function token_Generator(res, name, id,image) {
-//     let token = jwt.sign(
-//         { user: name, userID: id ,role : "User" },
-//         process.env.tokenpass,
-//         { expiresIn: "7d" }
-//     );
-//     let refreshToken = jwt.sign(
-//         { user: name, id: id },
-//         process.env.tokenpass,
-//         { expiresIn: "12d" }
-//     );
-    
-//     const redirectUrl = `http://127.0.0.1:5500/frontend/index2.html?token=${token}&username=${name}&image=${image}`;
-
-//     res.redirect(redirectUrl);
-// }
 
 
    //------------------- Google Auth Here -----------------------------------------
@@ -138,7 +83,7 @@ userrouter.get("/",async(req,res)=>{
             if (fetch_user) {
                 token_Generator(res, fetch_user.name, fetch_user._id, fetch_user.image);
             } else {
-                bcrypt.hash("password", 2, async (err, hash) => {
+                bcrypt.hash("password", 4, async (err, hash) => {
                     const newUser = new userModel({
                         name: req.user.name,
                         email: req.user.email,
@@ -166,7 +111,7 @@ function token_Generator(res, name, id,image) {
         { expiresIn: "6d" }
     );
     
-    const redirectUrl = `http://127.0.0.1:5500/frontend/index2.html?token=${token}&username=${name}&image=${image}`;
+    const redirectUrl = `http://127.0.0.1:5500/frontend/index.html?token=${token}&username=${name}&image=${image}`;
 
     res.redirect(redirectUrl);
 }
