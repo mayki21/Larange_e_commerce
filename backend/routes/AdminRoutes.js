@@ -45,6 +45,8 @@ AdminRoute.post("/api/jeans", async (req, res) => {
 
     }
 })
+
+
 AdminRoute.post("/api/tops", async (req, res) => {
     try {
         const data = new topsModel(req.body)
@@ -56,6 +58,11 @@ AdminRoute.post("/api/tops", async (req, res) => {
 
     }
 })
+
+
+
+
+
 
 AdminRoute.post("/api/shoes", async (req, res) => {
     try {
