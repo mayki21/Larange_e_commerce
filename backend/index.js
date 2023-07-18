@@ -28,8 +28,10 @@ app.use("/jeans", jeansRouter)
 app.use("/tops", topsRoute)
 
 app.use("/shoes", ShoesRoute)
-// app.use(auth);
+app.use(auth);
 app.use("/cart",cartRoute)
+app.use("/admin",AdminRoute)
+///////
 
 
 
