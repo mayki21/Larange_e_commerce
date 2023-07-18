@@ -6,8 +6,10 @@ const jeansRouter=require("./routes/jeansroute")
 const ShoesRoute=require("./routes/shoesroute")
 const topsRoute=require("./routes/toproute")
 const userRouter=require("./routes/userroute")
+const AdminRoute = require('./routes/AdminRoutes');
 const auth=require("./middleware/auth")
 const cors=require("cors")
+
 const app=express()
 
 app.use(express.json())
