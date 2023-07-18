@@ -1,6 +1,6 @@
 let user = document.getElementById("user")
 function Fetch() {
-    fetch(`https://crazy-eel-top-hat.cyclic.app/admin/api/users`, {
+    fetch(`https://larange-backend.onrender.com/admin/api/users`, {
         method: "GET",
         headers: {
             "content-type": "application/json",
