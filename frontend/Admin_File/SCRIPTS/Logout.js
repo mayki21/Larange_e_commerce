@@ -1,4 +1,4 @@
-const Base_Server_url = `https://crazy-eel-top-hat.cyclic.app`
+const Base_Server_url = `https://larange-backend.onrender.com`
 let token = localStorage.getItem("token")
 
 let logoutbtn = document.getElementById('logout')

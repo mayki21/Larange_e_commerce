@@ -21,7 +21,7 @@ app.use(cors())
 
 
 
-app.use("/user", userRouter)
+app.use("/users", userRouter)
 
 app.use("/jeans", jeansRouter)
 
