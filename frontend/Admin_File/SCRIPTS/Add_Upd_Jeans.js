@@ -1,4 +1,4 @@
-const BaseURL = `https://crazy-eel-top-hat.cyclic.app`
+// const BaseURL=""
 const productCart = document.getElementById('cart-container');
 // const token = localStorage.getItem("token")
 // let show_data = document.getElementById("show-data")
