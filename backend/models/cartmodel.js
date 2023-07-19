@@ -4,7 +4,7 @@ const CartSchema = mongoose.Schema({
     userID: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
     jeans: [
         {
-            data: { type: mongoose.Schema.Types.ObjectId, ref: "jean" },
+            data: { type: mongoose.Schema.Types.ObjectId, ref: "Jean" },
             Quantity: { type: Number, default: 1, min: 1 }
         }
 
@@ -13,7 +13,7 @@ const CartSchema = mongoose.Schema({
     tops: [
         {
             data: {
-                type: mongoose.Schema.Types.ObjectId, ref: "top"
+                type: mongoose.Schema.Types.ObjectId, ref: "Top"
             },
             Quantity: { type: Number, default: 1, min: 1 }
         }
@@ -21,7 +21,7 @@ const CartSchema = mongoose.Schema({
     shoes: [
         {
             data: {
-                type: mongoose.Schema.Types.ObjectId, ref: "shoe"
+                type: mongoose.Schema.Types.ObjectId, ref: "Shoe"
             },
             Quantity: { type: Number, default: 1, min: 1 }
         }
