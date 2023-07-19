@@ -10,6 +10,8 @@ let passwordel = document.getElementById("password")
 let showname = document.getElementById("showname")
 
 formel.addEventListener("submit", (e) => {
+    
+    
     e.preventDefault()
 
     let obj = {
@@ -18,6 +20,9 @@ formel.addEventListener("submit", (e) => {
         password: passwordel.value,
 
     }
+
+
+
 
     fetch(`${BaseServerUrl}/users/register`, {
         method: "POST",
@@ -31,7 +36,7 @@ formel.addEventListener("submit", (e) => {
             return res.json()
         })
         .then((data) => {
-            console.log(data);
+            // console.log(data);
             showname.innerHTML = `Mr. ${nameel.value} Registration Succesfull`
             Swal.fire({
                 position: "center",
