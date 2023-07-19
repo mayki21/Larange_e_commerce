@@ -9,7 +9,7 @@ const ProductFetch = () => {
         method: "GET",
         headers: {
             "content-type": "application/json",
-            "Authorization": `Berear ${token}`
+            "Authorization": `${token}`
         }
     }
     fetch(`${BaseURL}/admin/api/products`, optionss)
@@ -136,7 +136,7 @@ formele.addEventListener("submit", (e) => {
         method: "PATCH",
         headers: {
             "content-type": "application/json",
-            "Authorization": `Bearer ${token}`
+            "Authorization": `${token}`
         },
         body: JSON.stringify({
             title: nameinp.value,

@@ -1,6 +1,6 @@
 
 
-const BaseServerUrl = `https://larange-backend.onrender.com`
+const BaseServerUrl = `https://larangebackend.onrender.com`
 
 
 let formel = document.querySelector("form")

@@ -1,14 +1,14 @@
 
 const productCart = document.getElementById('cart-container');
 // const token = localStorage.getItem("token")
-let total = document.getElementById("show_total-products")
+let total = document.getElementById("show_total-products");
 
 const ProductFetch = () => {
     const optionss = {
         method: "GET",
         headers: {
             "content-type": "application/json",
-            "Authorization": `Berear ${token}`
+            "Authorization": `${token}`
         }
     }
     fetch(`${Base_Server_url}/admin/api/products`, optionss)

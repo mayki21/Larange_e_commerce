@@ -4,11 +4,11 @@ const cartContainer = document.getElementById("cartContainer");
 let showTotalusers = document.getElementById("show-Count-users")
 
 function Fetch() {
-    fetch(`https://larange-backend.onrender.com/admin/api/users`, {
+    fetch(`https://larangebackend.onrender.com/admin/api/users`, {
         method: "GET",
         headers: {
             "content-type": "application/json",
-            "Authorization": `Berear ${token}`
+            "Authorization": `${token}`
         }
     })
         .then((res) => res.json())
