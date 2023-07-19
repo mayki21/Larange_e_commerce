@@ -3,6 +3,7 @@ const userModel=require("../models/usermodel")
 const userrouter=express.Router();
 const bcrypt=require("bcrypt")
 const jwt=require("jsonwebtoken")
+const BlackModel=require("../models/Blackmodel")
 require("dotenv").config()
 const  passport  = require("../connection/google.Oauth");
 
@@ -55,6 +56,26 @@ userrouter.post("/login",async(req,res)=>{
 userrouter.get("/",async(req,res)=>{
     const user =await userModel.find()
     res.status(200).send(user);
+})
+
+
+userrouter.post("/logout", async (req, res) => {
+    try {
+        const token = req.headers.authorization
+        const decoded = jwt.verify(token,process.env.tokenpass)
+        const isTokenPresent = await BlackModel.findOne({ token: token })
+        if (isTokenPresent) {
+            return res.status(404).send({ "msg": "You Have Logout Already" })
+        }
+
+        const black = new BlackModel({ token: token })
+        await black.save()
+
+        res.send({ "msg": "Logout Succesfully", "ok": true })
+    } catch (error) {
+        res.status(401).send({ "msg": error.message })
+
+    }
 })
 
 
@@ -115,6 +136,10 @@ function token_Generator(res, name, id,image) {
 
     res.redirect(redirectUrl);
 }
+
+
+
+
 
 
 
