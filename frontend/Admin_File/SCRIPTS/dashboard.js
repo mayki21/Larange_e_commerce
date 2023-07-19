@@ -4,7 +4,7 @@ function Fetch() {
         method: "GET",
         headers: {
             "content-type": "application/json",
-            "Authorization": `Berear ${token}`
+            "Authorization": `${token}`
         }
     })
         .then((res) => res.json())
