@@ -1,4 +1,4 @@
-const Base_Server_url = `https://larange-backend.onrender.com`
+const Base_Server_url = `https://larangebackend.onrender.com`
 let token = localStorage.getItem("token")
 
 let logoutbtn = document.getElementById('logout')
@@ -20,7 +20,7 @@ function LogoutFunc() {
         method: "POST",
         headers: {
             "content-type": "application/json",
-            "Authorization": `Bearer ${token}`
+            "Authorization": `${token}`
         }
     }
     fetch(`${Base_Server_url}/users/logout`, options)

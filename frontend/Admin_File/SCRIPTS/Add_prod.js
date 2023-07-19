@@ -34,7 +34,7 @@ function FetchAndAdd() {
         method: "POST",
         headers: {
             "content-type": "application/json",
-            "Authorization": `Bearer ${token}`
+            "Authorization": `${token}`
         },
         body: JSON.stringify(newBody)
     }

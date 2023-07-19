@@ -1,5 +1,5 @@
 
-const BaseServerUrl = `https://larange-backend.onrender.com`
+const BaseServerUrl = `https://larangebackend.onrender.com`
 
 //slider top
 
@@ -30,7 +30,7 @@ function fetchAndRender() {
   fetch(`${BaseServerUrl}/cart`, {
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${localStorage.getItem("token")}`
+      "Authorization": `${localStorage.getItem("token")}`
     }
   })
     .then((res) => {
@@ -146,7 +146,7 @@ function appendata(data) {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${localStorage.getItem("token")}`
+          "Authorization": `${localStorage.getItem("token")}`
         }
       })
         .then((res) => {
@@ -182,7 +182,7 @@ function appendata(data) {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${localStorage.getItem("token")}`
+          "Authorization": `${localStorage.getItem("token")}`
         }
       })
         .then((res) => {
@@ -206,7 +206,7 @@ function appendata(data) {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${localStorage.getItem("token")}`
+          "Authorization": `${localStorage.getItem("token")}`
         }
       })
         .then((res) => {
@@ -295,7 +295,7 @@ if (token) {
       method: "POST",
       headers: {
         "content-type": "Application/json",
-        "Authorization": `Berear ${token}`
+        "Authorization": `${token}`
       }
     })
       .then((res) => res.json())

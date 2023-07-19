@@ -61,7 +61,7 @@ var texts = [
   
   setInterval(showText, 2500); // Change text every 3 seconds
   
-  const BaseServerUrl = `https://larange-backend.onrender.com`
+  const BaseServerUrl = `https://larangebackend.onrender.com`
   //////regbtn/////
   
   let regbtn = document.getElementById("Regbtn")
@@ -75,7 +75,7 @@ var texts = [
         method: "POST",
         headers: {
           "content-type": "Application/json",
-          "Authorization": `Berear ${token}`
+          "Authorization": `${token}`
         }
       })
         .then((res) => res.json())

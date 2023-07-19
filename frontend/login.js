@@ -1,4 +1,4 @@
-const BaseServerUrl = `https://larange-backend.onrender.com`
+const BaseServerUrl = `https://larangebackend.onrender.com`
 
 let formel = document.querySelector("form")
 
@@ -29,7 +29,7 @@ formel.addEventListener("submit", (e) => {
             return res.json()
         })
         .then((data) => {
-            if (data.msg == "Login successful") {
+            if (data.msg == "login successfully done") {
 
 
            

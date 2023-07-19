@@ -1,6 +1,6 @@
 let user = document.getElementById("user")
 function Fetch() {
-    fetch(`https://larange-backend.onrender.com/admin/api/users`, {
+    fetch(`https://larangebackend.onrender.com/admin/api/users`, {
         method: "GET",
         headers: {
             "content-type": "application/json",
@@ -25,7 +25,7 @@ const ProductFetch = () => {
         method: "GET",
         headers: {
             "content-type": "application/json",
-            "Authorization": `Berear ${token}`
+            "Authorization": `${token}`
         }
     }
     fetch(`${Base_Server_url}/admin/api/products`, optionss)
@@ -46,7 +46,7 @@ const JeansGet = () => {
         method: "GET",
         headers: {
             "content-type": "application/json",
-            "Authorization": `Berear ${token}`
+            "Authorization": `${token}`
         }
     }
     fetch(`${Base_Server_url}/jeans`, optionss)

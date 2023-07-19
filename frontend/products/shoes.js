@@ -2,7 +2,7 @@
 
 //////////URL/////////////
 
-const BaseServerUrl = `https://larange-backend.onrender.com`
+const BaseServerUrl = `https://larangebackend.onrender.com`
 //////////URL/////////////
 
 //slider top
@@ -119,11 +119,11 @@ function displayData(data) {
         button.addEventListener("click", () => {
             let token = localStorage.getItem("token")
             if (token) {
-                fetch(`https://larange-backend.onrender.com/cart/shoes/${ele._id}`, {
+                fetch(`https://larangebackend.onrender.com/cart/shoes/${ele._id}`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": `Bearer ${localStorage.getItem("token")}`
+                        "Authorization": `${localStorage.getItem("token")}`
                     },
                     body: JSON.stringify(ele)
                 })
@@ -260,7 +260,7 @@ if (token) {
         method: "POST",
         headers: {
           "content-type": "Application/json",
-          "Authorization": `Berear ${token}`
+          "Authorization": `${token}`
         }
       })
         .then((res) => res.json())
