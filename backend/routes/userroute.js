@@ -7,10 +7,10 @@ require("dotenv").config()
 const  passport  = require("../connection/google.Oauth");
 
 userrouter.post("/register",async(req,res)=>{
-    const {name,email,password}=req.body;
+    const {name,email,password,role}=req.body;
     try {
         bcrypt.hash(password,9,async(err,hash)=>{
-            const user=new userModel({name,email,password:hash})
+            const user=new userModel({name,email,password:hash,role})
             await user.save()
             res.status(200).send({"msg":"registration successful"})
 
