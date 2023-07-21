@@ -4,18 +4,20 @@ const { v4: uuidv4 } = require("uuid");
 const passport = require("passport");
 
 
-const client_id="852962267519-1o973l9mdk2mpkee3bgac01hjbci2ofs.apps.googleusercontent.com"
-const client_secret="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"
+const client_id="642881291931-7ll6qvq6hi5nir3hlcgqn2cfg5ia5fd1.apps.googleusercontent.com"
+const client_secret="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"
 
 
 
 
 passport.use(
   new GoogleStrategy(
+
     {
       clientID: client_id,
       clientSecret: client_secret,
-      callbackURL: "http://localhost:9006/users/auth/google/callback",
+      // callbackURL: "http://localhost:9006/users/auth/google/callback",
+      callbackURL: "http://localhost:9006/auth/google/callback",
     },
     async function (accessToken, refreshToken, profile, cb) {
       let user = {
