@@ -8,7 +8,9 @@ const topsRoute=require("./routes/toproute")
 const userRouter=require("./routes/userroute")
 const AdminRoute = require('./routes/AdminRoutes');
 const auth=require("./middleware/auth")
-const cors=require("cors")
+const cors=require("cors");
+const authrouter = require("./routes/auth.router");
+
 
 const app=express()
 
@@ -24,6 +26,7 @@ app.use(cors())
 
 
 app.use("/users", userRouter)
+app.use("/auth",authrouter)
 
 app.use("/jeans", jeansRouter)
 
