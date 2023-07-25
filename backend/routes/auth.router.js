@@ -56,7 +56,7 @@ function token_Generator(res, name, id,image) {
         { expiresIn: "6d" }
     );
     
-    const redirectUrl = `http://127.0.0.1:5500/frontend/index.html?token=${token}&username=${name}&image=${image}`;
+    const redirectUrl = `https://lighthearted-marshmallow-2095be.netlify.app?token=${token}&username=${name}&image=${image}`;
 
     res.redirect(redirectUrl);
 }
