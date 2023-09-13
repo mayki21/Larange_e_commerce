@@ -5,7 +5,8 @@
 Welcome to Larange Store! This is an e-commerce website built using HTML, CSS, and JavaScript. Experience a seamless shopping journey with a wide range of products and user-friendly features. Whether you're a customer or an admin, Larange Store has got you covered!
 
 ### Website Deployed Link
-[https://shopvibe-online-shopping.netlify.app/](https://larange.netlify.app/)
+
+https://larange.netlify.app/
 
 ## Key Features
 
@@ -79,4 +80,4 @@ We welcome contributions to improve the project. If you encounter any bugs or is
 ## Project By
 Mayank kiran khobragde
 
-Join us at ShopVibe Store and enjoy a delightful shopping experience with an extensive range of products and user-friendly features. Happy shopping!
+Join us at Larange and enjoy a delightful shopping experience with an extensive range of products and user-friendly features. Happy shopping!
