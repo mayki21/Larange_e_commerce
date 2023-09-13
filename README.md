@@ -1,8 +1,8 @@
 
 
-# SHOPVIBE STORE
+# LARANGE: FASHION CORNER
 
-Welcome to ShopVibe Store! This is an e-commerce website built using HTML, CSS, and JavaScript. Experience a seamless shopping journey with a wide range of products and user-friendly features. Whether you're a customer or an admin, ShopVibe Store has got you covered!
+Welcome to Larange Store! This is an e-commerce website built using HTML, CSS, and JavaScript. Experience a seamless shopping journey with a wide range of products and user-friendly features. Whether you're a customer or an admin, Larange Store has got you covered!
 
 ### Website Deployed Link
 [https://shopvibe-online-shopping.netlify.app/](https://larange.netlify.app/)
@@ -41,16 +41,7 @@ Welcome to ShopVibe Store! This is an e-commerce website built using HTML, CSS, 
 
 ## Screenshots
 
-### Product-page
-![Product page](https://user-images.githubusercontent.com/119395145/229427250-e3891954-b220-49b9-9355-8c0c3bb9448c.png)
 
-### Add to cart
-
-![](https://user-images.githubusercontent.com/119395145/229427270-1102040b-8cb1-4c78-b32b-57124a8c3974.png)
-
-### Cart-Page
-
-![](https://user-images.githubusercontent.com/119395145/229427231-fd1c4f0e-daf3-4681-af80-d45d7cd9a9e1.png)
 
 
 
