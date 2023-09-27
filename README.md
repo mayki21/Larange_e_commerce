@@ -6,7 +6,7 @@ Welcome to Larange Store! This is an e-commerce website built using HTML, CSS, a
 
 ### Website Deployed Link
 
-https://larange.netlify.app/
+https://larrange.netlify.app/
 
 ## Key Features
 
